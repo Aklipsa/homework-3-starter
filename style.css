@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6fa;
+  color: #1c2733;
+  margin: 0;
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.report {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: clamp(16px, 4vw, 20px);
+  color: #1c2733;
+  margin: 0 0 4px;
+}
+
+h2 {
+  font-size: clamp(14px, 3vw, 16px);
+  color: #3c454e;
+  margin: 0 0 12px;
+}
+
+/* Секции как панели из lab3: белые, скруглённые, с мягкой тенью */
+.summary,
+.results {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: clamp(14px, 3vw, 20px) clamp(12px, 3vw, 24px);
+  box-shadow: 0 2px 10px rgba(28, 39, 51, 0.08);
+  max-width: 1180px;
+  margin: 0 auto 14px;
+}
+
+/* Карточки сводки — отличны от фона страницы */
+.summary-card {
+  background: #eef2f7;
+  color: #1c2733;
+  border: 1px solid #c9d4e0;
+  border-radius: 8px;
+  padding: clamp(10px, 2vw, 14px) clamp(12px, 2.5vw, 18px);
+  margin: 8px 12px 8px 0;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 200px;
+}
+
+.summary-card strong {
+  color: #007bff;
+  font-size: 1.15em;
+}
+
+/* Форма фильтра — обычный поток без Flexbox */
+#filter-form {
+  margin: 10px 0;
+}
+
+#filter-form label {
+  color: #3c454e;
+  margin-right: 8px;
+}
+
+#filter {
+  padding: 6px 10px;
+  font-size: max(1rem, 16px);
+  line-height: 1.5;
+  background-color: #ffffff;
+  color: #1c2733;
+  border: 1px solid #adb5bd;
+  border-radius: 0.375rem;
+}
+
+#filter:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(13, 110, 237, 0.1);
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 8px clamp(12px, 2.5vw, 18px);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+  border-color: #0069d9;
+}
+
+#result-count {
+  color: #3c454e;
+  margin: 10px 0;
+}
+
+/* Строки участников — отличны от фона страницы */
+#result-list {
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.result-item {
+  background: #eef2f7;
+  color: #1c2733;
+  border: 1px solid #c9d4e0;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  padding: 10px clamp(10px, 2vw, 14px);
+  margin: 8px 0 0;
+  list-style: none;
+}
+
+#result-list .result-item:last-child {
+  margin-bottom: 0;
+}
+
+.result-name {
+  color: #007bff;
+  font-weight: bold;
+  margin-right: 12px;
+}
+/* Основы JavaScript — отчёт по викторине. Стили в духе lab3. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6fa;
+  color: #1c2733;
+  margin: 0;
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.report {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: clamp(16px, 4vw, 20px);
+  color: #1c2733;
+  margin: 0 0 4px;
+}
+
+h2 {
+  font-size: clamp(14px, 3vw, 16px);
+  color: #3c454e;
+  margin: 0 0 12px;
+}
+
+/* Секции как панели из lab3: белые, скруглённые, с мягкой тенью */
+.summary,
+.results {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: clamp(14px, 3vw, 20px) clamp(12px, 3vw, 24px);
+  box-shadow: 0 2px 10px rgba(28, 39, 51, 0.08);
+  max-width: 1180px;
+  margin: 0 auto 14px;
+}
+
+/* Карточки сводки — отличны от фона страницы */
+.summary-card {
+  background: #eef2f7;
+  color: #1c2733;
+  border: 1px solid #c9d4e0;
+  border-radius: 8px;
+  padding: clamp(10px, 2vw, 14px) clamp(12px, 2.5vw, 18px);
+  margin: 8px 12px 8px 0;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 200px;
+}
+
+.summary-card strong {
+  color: #007bff;
+  font-size: 1.15em;
+}
+
+/* Форма фильтра — обычный поток без Flexbox */
+#filter-form {
+  margin: 10px 0;
+}
+
+#filter-form label {
+  color: #3c454e;
+  margin-right: 8px;
+}
+
+#filter {
+  padding: 6px 10px;
+  font-size: max(1rem, 16px);
+  line-height: 1.5;
+  background-color: #ffffff;
+  color: #1c2733;
+  border: 1px solid #adb5bd;
+  border-radius: 0.375rem;
+}
+
+#filter:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(13, 110, 237, 0.1);
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 8px clamp(12px, 2.5vw, 18px);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+  border-color: #0069d9;
+}
+
+#result-count {
+  color: #3c454e;
+  margin: 10px 0;
+}
+
+/* Строки участников — отличны от фона страницы */
+#result-list {
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.result-item {
+  background: #eef2f7;
+  color: #1c2733;
+  border: 1px solid #c9d4e0;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  padding: 10px clamp(10px, 2vw, 14px);
+  margin: 8px 0 0;
+  list-style: none;
+}
+
+#result-list .result-item:last-child {
+  margin-bottom: 0;
+}
+
+.result-name {
+  color: #007bff;
+  font-weight: bold;
+  margin-right: 12px;
+}
